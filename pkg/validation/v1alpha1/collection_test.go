@@ -42,6 +42,7 @@ apiVersion: hub.traefik.io/v1alpha1
 kind: APICollection
 metadata:
   name: my-collection
+spec:
   pathPrefix: /collection
   apis:
     - name: my-api`),

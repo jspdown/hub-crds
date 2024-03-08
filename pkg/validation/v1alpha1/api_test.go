@@ -74,7 +74,7 @@ spec:
       path: /openapi.json
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - path: /foo
               methods:
                 - GET
@@ -404,7 +404,7 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - matchers: 
+        - matchers:
           - path: /foo`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeRequired, Field: "spec.service.openApiSpec.operationSets[0].name", BadValue: "", Detail: ""}},
 		},
@@ -467,7 +467,7 @@ spec:
       path: /foo
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - {}`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0]", BadValue: int64(0), Detail: "spec.service.openApiSpec.operationSets[0].matchers[0] in body should have at least 1 properties"}},
 		},
@@ -489,7 +489,7 @@ spec:
       path: /foo
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - path: /foo
               pathPrefix: /foo`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0]", BadValue: "object", Detail: "path, pathPrefix and pathRegex are mutually exclusive"}},
@@ -512,7 +512,7 @@ spec:
       path: /foo
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - path: /foo
               pathRegex: /.*/foo`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0]", BadValue: "object", Detail: "path, pathPrefix and pathRegex are mutually exclusive"}},
@@ -535,7 +535,7 @@ spec:
       path: /foo
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - pathPrefix: /foo
               pathRegex: /.*/foo`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0]", BadValue: "object", Detail: "path, pathPrefix and pathRegex are mutually exclusive"}},
@@ -558,7 +558,7 @@ spec:
       path: /foo
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - path: /foo
               pathPrefix: /foo
               pathRegex: /.*/foo`),
@@ -581,8 +581,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - path: something`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0].path", BadValue: "string", Detail: "must start with a '/'"}},
 		},
@@ -603,8 +603,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - path: /foo/../bar`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0].path", BadValue: "string", Detail: "cannot contains '../'"}},
 		},
@@ -625,8 +625,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - path: /foo/..`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0].path", BadValue: "string", Detail: "cannot contains '../'"}},
 		},
@@ -647,8 +647,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - path: /foo/..bar`),
 		},
 		{
@@ -668,8 +668,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - pathPrefix: something`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0].pathPrefix", BadValue: "string", Detail: "must start with a '/'"}},
 		},
@@ -690,8 +690,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - pathPrefix: /foo/../bar`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0].pathPrefix", BadValue: "string", Detail: "cannot contains '../'"}},
 		},
@@ -712,8 +712,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - pathPrefix: /foo/..`),
 			wantErrs: field.ErrorList{{Type: field.ErrorTypeInvalid, Field: "spec.service.openApiSpec.operationSets[0].matchers[0].pathPrefix", BadValue: "string", Detail: "cannot contains '../'"}},
 		},
@@ -734,8 +734,8 @@ spec:
     openApiSpec:
       path: /foo
       operationSets:
-        - name: my-operation-set 
-          matchers: 
+        - name: my-operation-set
+          matchers:
             - pathPrefix: /foo/..bar`),
 		},
 		{
@@ -756,7 +756,7 @@ spec:
       path: /foo
       operationSets:
         - name: my-operation-set
-          matchers: 
+          matchers:
             - methods:
               - GET`),
 		},

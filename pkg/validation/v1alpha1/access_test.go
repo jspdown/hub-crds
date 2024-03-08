@@ -49,12 +49,12 @@ spec:
     - name: my-api
       namespace: my-ns
   apiSelector:
-    labelSelector:
+    matchLabels:
       key: value
   apiCollections:
     - name: my-api-collection
   apiCollectionSelector:
-    labelSelector:
+    matchLabels:
       key: value
   operationFilter:
     include:

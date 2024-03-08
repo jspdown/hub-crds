@@ -58,7 +58,7 @@ func checkValidationTestCases(t *testing.T, tests []validationTestCase) {
 			t.Parallel()
 
 			var object unstructured.Unstructured
-			_, decoderErr := decoder.Decode(test.manifest, &object)
+			decoderErr := decoder.Decode(test.manifest, &object)
 			require.NoError(t, decoderErr)
 
 			gotErrs := validator.Validate(&object)
